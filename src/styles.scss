@@ -11,3 +11,16 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.header-nav {
+  justify-content: center;
+  background: red;
+  .p-menubar {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    @media screen and (max-width: 960px) {
+      justify-content: space-between;
+    }
+  }
+}

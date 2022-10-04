@@ -1,1 +1,47 @@
-<p>home works!</p>
+<div class="container">
+  <div class="flex flex-wrap">
+    <div
+      class="home-text col-12 md:col-6 lg:col-6 flex flex-column justify-content-center"
+    >
+      <h1 class="text-5xl">
+        We help reunite lost pets with their families. Enter a photo of your
+        missing.
+      </h1>
+      <p class="text-2xl">
+        Enter a photo of your missing pet and search our national lost and found
+        pet database to find them.
+      </p>
+      <div class="flex justify-content-center">
+        <p-button label="Found Pet"></p-button>
+        <p-button class="ml-4" label="Lost Pet"></p-button>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-6">
+      <img class="max-w-full mt-5" src="assets/images/home_img.jpg" alt="" />
+    </div>
+  </div>
+</div>
+<div class="container">
+  <p-carousel
+    [value]="products"
+    [numVisible]="4"
+    [numScroll]="4"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="header"> </ng-template>
+    <ng-template let-product pTemplate="item">
+      <div class="product-item">
+        <div class="product-item-content">
+          <div class="p-mb-3"></div>
+          <div class="flex">
+            <img class="w-full" [src]="'assets/images/' + product.image" />
+          </div>
+          <div>
+            <h4 class="p-mb-1">{{ product.status }}</h4>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
