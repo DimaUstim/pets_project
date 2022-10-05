@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { MydashboardComponent } from './pages/mydashboard/mydashboard.component';
-import { PetFormComponent } from './pages/pet-form/pet-form.component';
-import { PetsComponent } from './pages/pets/pets.component';
-import { SingInComponent } from './pages/sing-in/sing-in.component';
+import { HomeComponent } from './components/home/home.component';
+import { MydashboardComponent } from './components/my-dashboard/mydashboard.component';
+import { PetFormComponent } from './components/pet-form/pet-form.component';
+import { PetsComponent } from './components/pets/pets.component';
+import { SingInComponent } from './components/sing-in/sing-in.component';
 
 const routes: Routes = [
   {
