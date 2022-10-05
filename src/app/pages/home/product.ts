@@ -1,12 +1,10 @@
 export interface Product {
   id?: string;
-  code?: string;
   name?: string;
   description?: string;
-  price?: number;
-  quantity?: number;
-  inventoryStatus?: string;
-  category?: string;
+  periodInfo?: string;
+  gender?: string;
+  status?: string;
+  animal?: string;
   image?: string;
-  rating?: number;
 }

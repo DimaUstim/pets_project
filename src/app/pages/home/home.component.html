@@ -21,7 +21,7 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container mt-5">
   <p-carousel
     [value]="products"
     [numVisible]="4"
@@ -35,13 +35,67 @@
         <div class="product-item-content">
           <div class="p-mb-3"></div>
           <div class="flex">
-            <img class="w-full" [src]="'assets/images/' + product.image" />
+            <img
+              class="w-full"
+              (click)="showBasicDialog(product)"
+              icon="pi pi-external-link"
+              label="Show"
+              [src]="'assets/images/' + product.image"
+            />
           </div>
-          <div>
-            <h4 class="p-mb-1">{{ product.status }}</h4>
+          <div class="info-class flex flex-column">
+            <span class="flex mt-3 ml-4">{{ product.status }}</span>
+            <span class="flex mt-2 mb-3 ml-4">{{ product.periodInfo }}</span>
           </div>
         </div>
       </div>
     </ng-template>
   </p-carousel>
+</div>
+<div *ngIf="currentProduct">
+  <p-dialog
+    class="dialog-desc"
+    header="Pet Description"
+    [(visible)]="displayBasic"
+    [style]="{ width: '28vw' }"
+    [breakpoints]="{ '960px': '38vw', '640px': '56vw', '390px': '100vw' }"
+  >
+    <img
+      class="img-descpipt"
+      [src]="'assets/images/' + currentProduct.image"
+      [alt]="currentProduct.name"
+    />
+
+    <div class="mt-3">
+      <div class="type-info">
+        Name : <span class="pets-name">{{ currentProduct.name }}</span>
+      </div>
+      <div class="type-info">
+        Status : <span class="status">{{ currentProduct.status }}</span>
+      </div>
+      <div class="type-info">
+        Animal : <span class="animal">{{ currentProduct.animal }}</span>
+      </div>
+      <div class="type-info">
+        Gender : <span class="gender">{{ currentProduct.gender }}</span>
+      </div>
+      <div class="type-info">
+        Period : <span class="gender">{{ currentProduct.periodInfo }}</span>
+      </div>
+      <div class="type-info">
+        ID : <span class="id">{{ currentProduct.id }}</span>
+      </div>
+      <div class="type-info">
+        Description : <span class="id">{{ currentProduct.description }}</span>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button
+        icon="pi pi-check"
+        (click)="displayBasic = false"
+        label="Ok"
+        styleClass="p-button-text"
+      ></p-button>
+    </ng-template>
+  </p-dialog>
 </div>

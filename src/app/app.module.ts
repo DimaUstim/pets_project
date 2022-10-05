@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductService } from '../app/pages/home/productservice';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ProductService } from '../app/pages/home/productservice';
     HttpClientModule,
     FormsModule,
     ToastModule,
+    DialogModule,
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],

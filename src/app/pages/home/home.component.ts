@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from './productservice';
 import { Product } from './product';
 
@@ -9,8 +9,9 @@ import { Product } from './product';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
-
+  currentProduct?: Product;
   responsiveOptions;
+  displayBasic: boolean = false;
 
   constructor(private productService: ProductService) {
     this.responsiveOptions = [
@@ -30,6 +31,11 @@ export class HomeComponent implements OnInit {
         numScroll: 1,
       },
     ];
+  }
+
+  showBasicDialog(product: any) {
+    this.currentProduct = product;
+    this.displayBasic = true;
   }
 
   ngOnInit() {

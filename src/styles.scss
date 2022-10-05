@@ -14,7 +14,7 @@ body {
 
 .header-nav {
   justify-content: center;
-  background: red;
+
   .p-menubar {
     display: grid;
     grid-template-columns: auto auto;
@@ -23,4 +23,16 @@ body {
       justify-content: space-between;
     }
   }
+}
+
+.p-element {
+  .p-carousel-item {
+    padding: 5px;
+  }
+}
+
+.img-descpipt {
+  width: 300px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-right: 2rem;
 }

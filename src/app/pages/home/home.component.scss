@@ -6,6 +6,27 @@
   min-width: 320px !important;
 }
 
+.p-element {
+  .info-block {
+    border-left: 1px solid rgb(237, 237, 237);
+    border-right: 1px solid rgb(237, 237, 237);
+    border-bottom: 1px solid rgb(237, 237, 237);
+    padding: 20px;
+    background-color: #fff;
+  }
+  .product-item-content {
+    background-color: #e9ecef;
+    border-radius: 10px 10px 0 0;
+    img {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+}
+
 .home-text {
   max-width: 900px;
+}
+
+.type-info {
+  padding: 3px;
 }
