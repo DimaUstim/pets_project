@@ -11,6 +11,14 @@ import { SingInComponent } from './pages/sing-in/sing-in.component';
 import { MenubarModule } from 'primeng/menubar';
 import { PetFormComponent } from './pages/pet-form/pet-form.component';
 import { MydashboardComponent } from './pages/mydashboard/mydashboard.component';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
+import { ToastModule } from 'primeng/toast';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductService } from '../app/pages/home/productservice';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -23,8 +31,19 @@ import { MydashboardComponent } from './pages/mydashboard/mydashboard.component'
     PetFormComponent,
     MydashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MenubarModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MenubarModule,
+    ButtonModule,
+    CarouselModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ToastModule,
+    DialogModule,
+  ],
+  providers: [ProductService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
