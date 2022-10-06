@@ -4,8 +4,8 @@ import { PetsRepository } from '../repository/pets.repository';
 @Injectable()
 export class PetsService {
   constructor(private petsRepository: PetsRepository) {}
-  getPetsSmall() {
-    return this.petsRepository.getPetsSmall().then((data) => {
+  getPets() {
+    return this.petsRepository.getPets().then((data) => {
       return data;
     });
   }

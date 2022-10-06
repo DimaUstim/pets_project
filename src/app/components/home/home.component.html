@@ -12,8 +12,12 @@
         pet database to find them.
       </p>
       <div class="flex justify-content-center">
-        <p-button label="Found Pet"></p-button>
-        <p-button class="ml-4" label="Lost Pet"></p-button>
+        <p-button (click)="filterFoundPets()" label="Found Pet"></p-button>
+        <p-button
+          (click)="filterLostPets()"
+          class="ml-4"
+          label="Lost Pet"
+        ></p-button>
       </div>
     </div>
     <div class="col-12 md:col-6 lg:col-6">
