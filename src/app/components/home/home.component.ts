@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ProductService } from '../../service/product.service';
-import { Product } from '../../model/product';
+import { Component, OnInit } from '@angular/core';
+import { PetsService } from '../../service/pets.service';
+import { Pets } from '../../model/pets';
 
 @Component({
   selector: 'home',
@@ -8,12 +8,12 @@ import { Product } from '../../model/product';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  products: Product[] = [];
-  currentProduct?: Product;
+  pets: Pets[] = [];
+  currentPet?: Pets;
   responsiveOptions;
   displayBasic: boolean = false;
 
-  constructor(private productService: ProductService) {
+  constructor(private petsService: PetsService) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -33,14 +33,14 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  showBasicDialog(product: any) {
-    this.currentProduct = product;
+  showBasicDialog(pets: any) {
+    this.currentPet = pets;
     this.displayBasic = true;
   }
 
   ngOnInit() {
-    this.productService.getProductsSmall().then((products) => {
-      this.products = products;
+    this.petsService.getProductsSmall().then((pets) => {
+      this.pets = pets;
     });
   }
 }

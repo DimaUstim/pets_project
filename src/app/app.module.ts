@@ -17,7 +17,7 @@ import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductService } from './service/product.service';
+import { PetsService } from './service/pets.service';
 import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
@@ -43,7 +43,7 @@ import { DialogModule } from 'primeng/dialog';
     ToastModule,
     DialogModule,
   ],
-  providers: [ProductService],
+  providers: [PetsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
