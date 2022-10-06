@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PetsService } from '../../service/pets.service';
-import { Pets } from '../../model/pets';
+import { Pet } from '../../model/pet';
 
 @Component({
   selector: 'home',
@@ -8,8 +8,8 @@ import { Pets } from '../../model/pets';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  pets: Pets[] = [];
-  currentPet?: Pets;
+  pets: Pet[] = [];
+  currentPet?: Pet;
   responsiveOptions;
   displayBasic: boolean = false;
 

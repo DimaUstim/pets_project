@@ -1,10 +1,10 @@
-export interface Pets {
+export interface Pet {
   id?: string;
   name?: string;
   description?: string;
   periodInfo?: string;
   gender?: string;
   status?: string;
-  animal?: string;
+  petType?: string;
   image?: string;
 }

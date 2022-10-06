@@ -40,7 +40,7 @@
               (click)="showBasicDialog(pets)"
               icon="pi pi-external-link"
               label="Show"
-              [src]="'assets/images/' + pets.image"
+              [src]="pets.image"
             />
           </div>
           <div class="info-class flex flex-column">
@@ -74,7 +74,7 @@
         Status : <span class="status">{{ currentPet.status }}</span>
       </div>
       <div class="type-info">
-        Animal : <span class="animal">{{ currentPet.animal }}</span>
+        Animal : <span class="animal">{{ currentPet.petType }}</span>
       </div>
       <div class="type-info">
         Gender : <span class="gender">{{ currentPet.gender }}</span>

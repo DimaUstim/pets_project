@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pets } from '../model/pets';
+import { Pet } from '../model/pet';
 
 @Injectable()
 export class PetsRepository {
@@ -8,11 +8,8 @@ export class PetsRepository {
 
   getPetsSmall() {
     return this.httpClient
-      .get<any>('assets/pets-small.json')
+      .get<Pet[]>('http://127.0.0.1:3000/api/list')
       .toPromise()
-      .then((res) => <Pets[]>res.data)
-      .then((data) => {
-        return data;
-      });
+      .then((res) => res || []);
   }
 }
