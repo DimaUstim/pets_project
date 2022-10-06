@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
-// import { FooterComponent } from './shared/footer/footer.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PetsComponent } from './components/pets/pets.component';
 import { SingInComponent } from './components/sing-in/sing-in.component';
@@ -24,7 +24,7 @@ import { DialogModule } from 'primeng/dialog';
   declarations: [
     AppComponent,
     HeaderComponent,
-    // FooterComponent,
+    FooterComponent,
     HomeComponent,
     PetsComponent,
     SingInComponent,
