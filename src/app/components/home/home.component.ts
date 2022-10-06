@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.petsService.getProductsSmall().then((pets) => {
+    this.petsService.getPetsSmall().then((pets) => {
       this.pets = pets;
     });
   }
