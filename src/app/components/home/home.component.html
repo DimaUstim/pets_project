@@ -23,36 +23,36 @@
 </div>
 <div class="container mt-5">
   <p-carousel
-    [value]="products"
+    [value]="pets"
     [numVisible]="4"
     [numScroll]="4"
     [circular]="false"
     [responsiveOptions]="responsiveOptions"
   >
     <ng-template pTemplate="header"> </ng-template>
-    <ng-template let-product pTemplate="item">
+    <ng-template let-pets pTemplate="item">
       <div class="product-item">
         <div class="product-item-content">
           <div class="p-mb-3"></div>
           <div class="flex">
             <img
               class="w-full"
-              (click)="showBasicDialog(product)"
+              (click)="showBasicDialog(pets)"
               icon="pi pi-external-link"
               label="Show"
-              [src]="'assets/images/' + product.image"
+              [src]="pets.image"
             />
           </div>
           <div class="info-class flex flex-column">
-            <span class="flex mt-3 ml-4">{{ product.status }}</span>
-            <span class="flex mt-2 mb-3 ml-4">{{ product.periodInfo }}</span>
+            <span class="flex mt-3 ml-4">{{ pets.status }}</span>
+            <span class="flex mt-2 mb-3 ml-4">{{ pets.periodInfo }}</span>
           </div>
         </div>
       </div>
     </ng-template>
   </p-carousel>
 </div>
-<div *ngIf="currentProduct">
+<div *ngIf="currentPet">
   <p-dialog
     class="dialog-desc"
     header="Pet Description"
@@ -62,31 +62,31 @@
   >
     <img
       class="img-descpipt"
-      [src]="'assets/images/' + currentProduct.image"
-      [alt]="currentProduct.name"
+      [src]="currentPet.image"
+      [alt]="currentPet.name"
     />
 
     <div class="mt-3">
       <div class="type-info">
-        Name : <span class="pets-name">{{ currentProduct.name }}</span>
+        Name : <span class="pets-name">{{ currentPet.name }}</span>
       </div>
       <div class="type-info">
-        Status : <span class="status">{{ currentProduct.status }}</span>
+        Status : <span class="status">{{ currentPet.status }}</span>
       </div>
       <div class="type-info">
-        Animal : <span class="animal">{{ currentProduct.animal }}</span>
+        Animal : <span class="animal">{{ currentPet.petType }}</span>
       </div>
       <div class="type-info">
-        Gender : <span class="gender">{{ currentProduct.gender }}</span>
+        Gender : <span class="gender">{{ currentPet.gender }}</span>
       </div>
       <div class="type-info">
-        Period : <span class="gender">{{ currentProduct.periodInfo }}</span>
+        Period : <span class="gender">{{ currentPet.periodInfo }}</span>
       </div>
       <div class="type-info">
-        ID : <span class="id">{{ currentProduct.id }}</span>
+        ID : <span class="id">{{ currentPet.id }}</span>
       </div>
       <div class="type-info">
-        Description : <span class="id">{{ currentProduct.description }}</span>
+        Description : <span class="id">{{ currentPet.description }}</span>
       </div>
     </div>
     <ng-template pTemplate="footer">
