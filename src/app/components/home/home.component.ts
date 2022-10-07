@@ -9,8 +9,11 @@ import { Pet } from '../../model/pet';
 })
 export class HomeComponent implements OnInit {
   pets: Pet[] = [];
+  totalPets: Pet[] = [];
   currentPet?: Pet;
   responsiveOptions;
+  status1: string = 'Found';
+  status2: string = 'Lost';
   displayBasic: boolean = false;
 
   constructor(private petsService: PetsService) {
@@ -38,9 +41,19 @@ export class HomeComponent implements OnInit {
     this.displayBasic = true;
   }
 
+  filterFoundPets() {
+    this.pets = this.totalPets.filter((pet) => pet.status === this.status1);
+    console.log(this.pets);
+  }
+  filterLostPets() {
+    this.pets = this.totalPets.filter((pet) => pet.status === this.status2);
+    console.log(this.pets);
+  }
+
   ngOnInit() {
-    this.petsService.getPetsSmall().then((pets) => {
+    this.petsService.getPets().then((pets) => {
       this.pets = pets;
+      this.totalPets = pets;
     });
   }
 }
