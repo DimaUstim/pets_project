@@ -28,22 +28,22 @@ body {
 .p-element {
   .p-carousel-item {
     padding: 5px;
+    max-width: 268px;
   }
 }
 
 .img-descpipt {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 .p-dialog {
   .p-dialog-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     .pets-info {
       justify-content: start;
-
       flex-direction: column;
     }
   }

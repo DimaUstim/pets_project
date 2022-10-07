@@ -41,11 +41,9 @@ export class HomeComponent implements OnInit {
 
   filterFoundPets() {
     this.pets = this.totalPets.filter((pet) => pet.status === PetStatus.Found);
-    console.log(this.pets);
   }
   filterLostPets() {
     this.pets = this.totalPets.filter((pet) => pet.status === PetStatus.Lost);
-    console.log(this.pets);
   }
 
   ngOnInit() {
