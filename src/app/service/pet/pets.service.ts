@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PetsRepository } from '../repository/pets.repository';
+import { PetsRepository } from '../../repository/pet/pets.repository';
 
 @Injectable()
 export class PetsService {
