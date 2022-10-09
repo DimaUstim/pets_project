@@ -12,9 +12,12 @@
         pet database to find them.
       </p>
       <div class="flex justify-content-center">
-        <p-button (click)="filterFoundPets()" label="Found Pet"></p-button>
         <p-button
-          (click)="filterLostPets()"
+          (click)="filterPets(PetStatus.Found)"
+          label="Found Pet"
+        ></p-button>
+        <p-button
+          (click)="filterPets(PetStatus.Lost)"
           class="ml-4"
           label="Lost Pet"
         ></p-button>
