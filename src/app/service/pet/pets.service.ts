@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { PetsRepository } from '../../repository/pet/pets.repository';
-import { Pet, PetStatus } from '../../model';
+import { PetsRepository } from '../../repository/index';
+import { Pet, PetStatus } from '../../model/index';
 
 @Injectable()
 export class PetsService {

@@ -17,9 +17,9 @@ import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PetsService } from './service/pet/pets.service';
+import { PetsService } from './service/index';
 import { DialogModule } from 'primeng/dialog';
-import { PetsRepository } from './repository/pet/pets.repository';
+import { PetsRepository } from './repository/index';
 
 @NgModule({
   declarations: [
