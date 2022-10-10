@@ -1,1 +1,1 @@
-export * from './pet/index';
+export * from './pet';
