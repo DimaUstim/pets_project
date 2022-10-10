@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pet, PetStatus } from '../../model/index';
-import { PetsService } from '../../service/index';
+import { Pet, PetStatus } from '../../model';
+import { PetsService } from '../../service';
 
 @Component({
   selector: 'home',
