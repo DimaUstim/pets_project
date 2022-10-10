@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PetsService } from './service';
 import { DialogModule } from 'primeng/dialog';
 import { PetsRepository } from './repository';
+import { BaseUrlInterceptor } from './interceptors/base-url-interceptor';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { PetsRepository } from './repository';
     ToastModule,
     DialogModule,
   ],
-  providers: [PetsService, PetsRepository],
+  providers: [PetsService, PetsRepository, BaseUrlInterceptor],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
