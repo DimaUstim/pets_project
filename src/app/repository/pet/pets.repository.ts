@@ -1,19 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Pet } from '../../model';
-import { BaseUrlInterceptor } from '../../interceptors/base-url-interceptor';
 
 @Injectable()
 export class PetsRepository {
-  constructor(
-    private httpClient: HttpClient,
-    private baseUrlInterceptor: BaseUrlInterceptor
-  ) {}
+  constructor(private httpClient: HttpClient) {}
 
   async getPets() {
-    const res = await this.httpClient
-      .get<Pet[]>(this.baseUrlInterceptor.baseUrl)
-      .toPromise();
+    const res = await this.httpClient.get<Pet[]>('list').toPromise();
     return res || [];
   }
 }
