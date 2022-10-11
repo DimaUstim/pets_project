@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   pets: Pet[] = [];
   currentPet?: Pet;
   responsiveOptions;
-  displayBasic: boolean = false;
+  visible: boolean = false;
   PetStatus = PetStatus;
 
   constructor(private petsService: PetsService) {
@@ -34,15 +34,16 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  showDialog(pets: any) {
-    this.currentPet = pets;
+  showDialog(pet: any) {
+    this.currentPet = pet;
+    this.visible = true;
   }
   hideDialog() {
-    this.displayBasic = false;
+    this.visible = false;
   }
 
-  filterPets(status: PetStatus) {
-    this.petsService.filterPets(status).then((data) => {
+  getPets(status: PetStatus) {
+    this.petsService.getPets(status).then((data) => {
       this.pets = data;
     });
   }

@@ -13,11 +13,11 @@
       </p>
       <div class="flex justify-content-center">
         <p-button
-          (click)="filterPets(PetStatus.Found)"
+          (click)="getPets(PetStatus.Found)"
           label="Found Pet"
         ></p-button>
         <p-button
-          (click)="filterPets(PetStatus.Lost)"
+          (click)="getPets(PetStatus.Lost)"
           class="ml-4"
           label="Lost Pet"
         ></p-button>
@@ -63,7 +63,7 @@
   <p-dialog
     class="dialog-desc"
     header="Pet Description"
-    [(visible)]="currentPet"
+    [(visible)]="visible"
     [style]="{ width: '348px' }"
   >
     <img
