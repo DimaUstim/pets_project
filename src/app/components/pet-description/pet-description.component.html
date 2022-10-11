@@ -1,0 +1,48 @@
+<div>
+  <p-dialog
+    class="dialog-desc"
+    header="Pet Description"
+    [(visible)]="visible"
+    [style]="{ width: '348px' }"
+    [dismissableMask]="true"
+    [modal]="true"
+  >
+    <img
+      class="img-descpipt"
+      [src]="currentPet?.image"
+      [alt]="currentPet?.name"
+    />
+
+    <div class="pet-info mt-3">
+      <div class="type-info">
+        Name : <span class="pets-name">{{ currentPet?.name }}</span>
+      </div>
+      <div class="type-info">
+        Status : <span class="status">{{ currentPet?.status }}</span>
+      </div>
+      <div class="type-info">
+        Animal : <span class="animal">{{ currentPet?.petType }}</span>
+      </div>
+      <div class="type-info">
+        Gender : <span class="gender">{{ currentPet?.gender }}</span>
+      </div>
+      <div class="type-info">
+        Period : <span class="gender">{{ currentPet?.periodInfo }}</span>
+      </div>
+      <div class="type-info">
+        ID : <span class="id">{{ currentPet?.id }}</span>
+      </div>
+      <div class="type-info">
+        Description : <span class="id">{{ currentPet?.description }}</span>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button
+        icon="pi pi-check"
+        (click)="hideDescription()"
+        label="Ok"
+        styleClass="p-button-text"
+      ></p-button>
+    </ng-template>
+  </p-dialog>
+</div>

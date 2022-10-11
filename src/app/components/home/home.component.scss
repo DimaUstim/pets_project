@@ -2,24 +2,15 @@
   box-sizing: border-box;
   margin: auto;
   padding: 0;
-  max-width: 1170px !important;
-  min-width: 320px !important;
+  max-width: 1170px;
+  min-width: 320px;
 }
 
-.p-element {
-  .info-block {
-    border-left: 1px solid rgb(237, 237, 237);
-    border-right: 1px solid rgb(237, 237, 237);
-    border-bottom: 1px solid rgb(237, 237, 237);
-    padding: 20px;
-    background-color: #fff;
-  }
-  .product-item-content {
-    background-color: #e9ecef;
+.product-item-content {
+  background-color: #e9ecef;
+  border-radius: 10px 10px 0 0;
+  img {
     border-radius: 10px 10px 0 0;
-    img {
-      border-radius: 10px 10px 0 0;
-    }
   }
 }
 

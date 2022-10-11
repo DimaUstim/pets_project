@@ -21,6 +21,7 @@ import { PetsService } from './service';
 import { DialogModule } from 'primeng/dialog';
 import { PetsRepository } from './repository';
 import { BaseUrlInterceptor } from './interceptors';
+import { PetDescriptionComponent } from './components/pet-description/pet-description.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BaseUrlInterceptor } from './interceptors';
     SingInComponent,
     PetFormComponent,
     MydashboardComponent,
+    PetDescriptionComponent,
   ],
   imports: [
     BrowserModule,
