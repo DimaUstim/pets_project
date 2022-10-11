@@ -34,9 +34,11 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  showBasicDialog(pets: any) {
+  showDialog(pets: any) {
     this.currentPet = pets;
-    this.displayBasic = true;
+  }
+  hideDialog() {
+    this.displayBasic = false;
   }
 
   filterPets(status: PetStatus) {
