@@ -15,11 +15,12 @@ import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PetsService } from './service/pets.service';
+import { PetsService } from './service';
 import { DialogModule } from 'primeng/dialog';
-import { PetsRepository } from './repository/pets.repository';
+import { PetsRepository } from './repository';
+import { BaseUrlInterceptor } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,15 @@ import { PetsRepository } from './repository/pets.repository';
     ToastModule,
     DialogModule,
   ],
-  providers: [PetsService, PetsRepository],
+  providers: [
+    PetsService,
+    PetsRepository,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BaseUrlInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

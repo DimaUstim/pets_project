@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PetsService } from '../../service/pets.service';
-import { Pet } from '../../model/pet';
+import { Pet, PetStatus } from '../../model';
+import { PetsService } from '../../service';
 
 @Component({
   selector: 'home',
@@ -9,12 +9,9 @@ import { Pet } from '../../model/pet';
 })
 export class HomeComponent implements OnInit {
   pets: Pet[] = [];
-  totalPets: Pet[] = [];
   currentPet?: Pet;
   responsiveOptions;
-  status1: string = 'Found';
-  status2: string = 'Lost';
-  displayBasic: boolean = false;
+  PetStatus = PetStatus;
 
   constructor(private petsService: PetsService) {
     this.responsiveOptions = [
@@ -36,24 +33,22 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  showBasicDialog(pets: any) {
-    this.currentPet = pets;
-    this.displayBasic = true;
+  showDialog(pet: any) {
+    this.currentPet = pet;
+  }
+  hideDialog() {
+    this.currentPet = undefined;
   }
 
-  filterFoundPets() {
-    this.pets = this.totalPets.filter((pet) => pet.status === this.status1);
-    console.log(this.pets);
-  }
-  filterLostPets() {
-    this.pets = this.totalPets.filter((pet) => pet.status === this.status2);
-    console.log(this.pets);
+  getPets(status: PetStatus) {
+    this.petsService.getPets(status).then((data) => {
+      this.pets = data;
+    });
   }
 
   ngOnInit() {
     this.petsService.getPets().then((pets) => {
       this.pets = pets;
-      this.totalPets = pets;
     });
   }
 }
