@@ -12,10 +12,11 @@ export class PetDescriptionComponent implements OnInit {
 
   constructor() {}
 
-  showDescription() {
+  showDialog() {
     this.visible = true;
   }
-  hideDescription() {
+
+  hideDialog() {
     this.visible = false;
   }
 

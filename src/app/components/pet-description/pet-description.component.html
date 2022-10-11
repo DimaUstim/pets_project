@@ -12,7 +12,6 @@
       [src]="currentPet?.image"
       [alt]="currentPet?.name"
     />
-
     <div class="pet-info mt-3">
       <div class="type-info">
         Name : <span class="pets-name">{{ currentPet?.name }}</span>
@@ -39,7 +38,7 @@
     <ng-template pTemplate="footer">
       <p-button
         icon="pi pi-check"
-        (click)="hideDescription()"
+        (click)="hideDialog()"
         label="Ok"
         styleClass="p-button-text"
       ></p-button>

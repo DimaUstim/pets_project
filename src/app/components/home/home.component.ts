@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   responsiveOptions;
   PetStatus = PetStatus;
   currentPet?: Pet;
-  displayBasic: boolean = true;
 
   constructor(private petsService: PetsService) {
     this.responsiveOptions = [
@@ -37,13 +36,13 @@ export class HomeComponent implements OnInit {
     ];
   }
 
-  showBasicDialog(pet: any) {
+  showDialog(pet: any) {
     this.currentPet = pet;
-    this.petDescription.showDescription();
+    this.petDescription.showDialog();
   }
 
-  filterPets(status: PetStatus) {
-    this.petsService.filterPets(status).then((data) => {
+  getPets(status: PetStatus) {
+    this.petsService.getPets(status).then((data) => {
       this.pets = data;
     });
   }
