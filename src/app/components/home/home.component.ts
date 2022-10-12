@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Pet, PetStatus } from '../../model';
 import { PetsService } from '../../service';
+import { PetDescriptionComponent } from '../pet-description/pet-description.component';
 
 @Component({
   selector: 'home',
@@ -8,10 +9,12 @@ import { PetsService } from '../../service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(PetDescriptionComponent) petDescription!: PetDescriptionComponent;
+
   pets: Pet[] = [];
-  currentPet?: Pet;
   responsiveOptions;
   PetStatus = PetStatus;
+  currentPet?: Pet;
 
   constructor(private petsService: PetsService) {
     this.responsiveOptions = [
@@ -35,9 +38,7 @@ export class HomeComponent implements OnInit {
 
   showDialog(pet: any) {
     this.currentPet = pet;
-  }
-  hideDialog() {
-    this.currentPet = undefined;
+    this.petDescription.showDialog();
   }
 
   getPets(status: PetStatus) {
