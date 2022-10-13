@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DialogRef } from '../../service/overlay/overlay-dialog-ref';
+import { DIALOG_DATA } from 'src/app/service/overlay/overlay-token';
 
 @Component({
-  selector: 'app-sing-in',
+  selector: 'sing-in',
   templateUrl: './sing-in.component.html',
-  styleUrls: ['./sing-in.component.scss']
+  styleUrls: ['./sing-in.component.scss'],
 })
-export class SingInComponent implements OnInit {
+export class SingInComponent {
+  value2: string | undefined;
+  value4: string | undefined;
 
-  constructor() { }
+  constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) public data: string
+  ) {}
 
-  ngOnInit(): void {
+  close() {
+    this.dialogRef.close();
   }
-
 }

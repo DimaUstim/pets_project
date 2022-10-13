@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,9 @@ import { DialogModule } from 'primeng/dialog';
 import { PetsRepository } from './repository';
 import { BaseUrlInterceptor } from './interceptors';
 import { PetDescriptionComponent } from './components/pet-description/pet-description.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { OverlayService } from './service';
 
 @NgModule({
   declarations: [
@@ -46,10 +50,14 @@ import { PetDescriptionComponent } from './components/pet-description/pet-descri
     FormsModule,
     ToastModule,
     DialogModule,
+    OverlayModule,
+    InputTextModule,
+    PasswordModule,
   ],
   providers: [
     PetsService,
     PetsRepository,
+    OverlayService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: BaseUrlInterceptor,
