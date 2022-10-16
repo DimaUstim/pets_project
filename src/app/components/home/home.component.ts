@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Pet, PetStatus } from '../../model';
 import { PetsService } from '../../service';
 import { PetDescriptionComponent } from '../pet-description/pet-description.component';
-// import { OverlayService } from '../../service/overlay/overlay.service';
 
 @Component({
   selector: 'home',
@@ -17,10 +16,7 @@ export class HomeComponent implements OnInit {
   PetStatus = PetStatus;
   currentPet?: Pet;
 
-  constructor(
-    private petsService: PetsService
-  ) // private overlayService: OverlayService
-  {
+  constructor(private petsService: PetsService) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -43,7 +39,6 @@ export class HomeComponent implements OnInit {
   showDialog(pet: any) {
     this.currentPet = pet;
     this.petDescription.showDialog();
-    // this.overlayService.open(PetDescriptionComponent);
   }
 
   getPets(status: PetStatus) {

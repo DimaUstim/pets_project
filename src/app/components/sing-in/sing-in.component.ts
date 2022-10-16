@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
-import { DialogRef } from '../../service/overlay/overlay-dialog-ref';
-import { DIALOG_DATA } from 'src/app/service/overlay/overlay-token';
+import { DialogRef } from '../../service';
+import { DIALOG_DATA } from 'src/app/service';
 
 @Component({
   selector: 'sing-in',
