@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pet, PetStatus } from '../../model';
-import { PetsService } from '../../service';
+import { PetsService, OverlayService } from '../../service';
 import { PetDescriptionComponent } from '../pet-description/pet-description.component';
 
 @Component({
@@ -9,14 +9,14 @@ import { PetDescriptionComponent } from '../pet-description/pet-description.comp
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  @ViewChild(PetDescriptionComponent) petDescription!: PetDescriptionComponent;
-
   pets: Pet[] = [];
   responsiveOptions;
   PetStatus = PetStatus;
-  currentPet?: Pet;
 
-  constructor(private petsService: PetsService) {
+  constructor(
+    private petsService: PetsService,
+    private dialog: OverlayService
+  ) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -37,8 +37,12 @@ export class HomeComponent implements OnInit {
   }
 
   showDialog(pet: any) {
-    this.currentPet = pet;
-    this.petDescription.showDialog();
+    const dialogRef = this.dialog.open(PetDescriptionComponent, { data: pet });
+
+    dialogRef.afterClosed().subscribe(() => {
+      // Subscription runs after the dialog closes
+      console.log('Dialog closed!');
+    });
   }
 
   getPets(status: PetStatus) {

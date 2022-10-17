@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { DialogRef } from '../../service';
-import { DIALOG_DATA } from 'src/app/service';
+import { DIALOG_DATA } from '../../service';
 
 @Component({
   selector: 'sing-in',
@@ -13,7 +13,7 @@ export class SingInComponent {
 
   constructor(
     private dialogRef: DialogRef,
-    @Inject(DIALOG_DATA) public data: string
+    @Inject(DIALOG_DATA) public data: any
   ) {}
 
   close() {

@@ -8,9 +8,7 @@ interface DialogConfig {
   data?: any;
 }
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class OverlayService {
   constructor(private overlay: Overlay, private injector: Injector) {}
 
@@ -48,7 +46,9 @@ export class OverlayService {
     // Attach component portal to the overlay
     const portal = new ComponentPortal(component, null, injector);
     overlayRef.attach(portal);
-    overlayRef.backdropClick().subscribe(() => dialogRef.close());
+
+    component?.name === 'PetDescriptionComponent' &&
+      overlayRef.backdropClick().subscribe(() => dialogRef.close());
 
     return dialogRef;
   }
