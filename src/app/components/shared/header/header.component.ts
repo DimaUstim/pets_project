@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { OverlayService } from '../../../service';
+import { SingInComponent } from '../../sing-in/sing-in.component';
 
 @Component({
   selector: 'header',
@@ -9,7 +11,7 @@ import { MenuItem } from 'primeng/api';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] = [];
 
-  constructor() {}
+  constructor(private dialog: OverlayService) {}
 
   ngOnInit(): void {
     this.items = [
@@ -36,8 +38,10 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'Sing in',
-        routerLink: ['/singIn'],
         icon: 'pi pi-fw pi-sign-in',
+        command: () => {
+          const dialogRef = this.dialog.open(SingInComponent);
+        },
       },
     ];
   }

@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DialogRef } from '../../service';
+import { DIALOG_DATA } from '../../service';
 
 @Component({
-  selector: 'app-sing-in',
+  selector: 'sing-in',
   templateUrl: './sing-in.component.html',
   styleUrls: ['./sing-in.component.scss']
 })
-export class SingInComponent implements OnInit {
+export class SingInComponent {
+  value2?: string;
+  value4?: string;
 
-  constructor() { }
+  constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) public data: any
+  ) { }
 
-  ngOnInit(): void {
+  close() {
+    this.dialogRef.close();
   }
-
 }

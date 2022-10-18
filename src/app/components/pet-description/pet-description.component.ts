@@ -1,24 +1,24 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DialogRef } from '../../service';
+import { DIALOG_DATA } from '../../service';
 import { Pet } from '../../model';
 
 @Component({
   selector: 'pet-description',
   templateUrl: './pet-description.component.html',
-  styleUrls: ['./pet-description.component.scss'],
+  styleUrls: ['./pet-description.component.scss']
 })
-export class PetDescriptionComponent implements OnInit {
-  @Input() currentPet?: Pet;
-  visible: boolean = false;
+export class PetDescriptionComponent {
+  currentPet?: Pet;
 
-  constructor() {}
-
-  showDialog() {
-    this.visible = true;
+  constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) public data: any
+  ) {
+    this.currentPet = data;
   }
 
-  hideDialog() {
-    this.visible = false;
+  close() {
+    this.dialogRef.close();
   }
-
-  ngOnInit(): void {}
 }
