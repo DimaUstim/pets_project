@@ -19,8 +19,8 @@ h3 {
   box-sizing: border-box;
   margin: auto;
   padding: 0;
-  max-width: 1170px !important;
-  min-width: 320px !important;
+  max-width: 1170px;
+  min-width: 320px;
 }
 
 .footer--blocks_contacts {
@@ -50,7 +50,7 @@ h3 {
 
 @media screen and (max-width: 575px) {
   .footer-blocks {
-    justify-content: space-around !important;
+    justify-content: space-around;
   }
 
   .footer-contacts {
