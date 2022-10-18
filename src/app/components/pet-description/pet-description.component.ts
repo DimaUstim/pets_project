@@ -6,10 +6,10 @@ import { Pet } from '../../model';
 @Component({
   selector: 'pet-description',
   templateUrl: './pet-description.component.html',
-  styleUrls: ['./pet-description.component.scss'],
+  styleUrls: ['./pet-description.component.scss']
 })
 export class PetDescriptionComponent {
-  currentPet: Pet | undefined;
+  currentPet?: Pet;
 
   constructor(
     private dialogRef: DialogRef,
