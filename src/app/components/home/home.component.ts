@@ -37,11 +37,9 @@ export class HomeComponent implements OnInit {
   }
 
   showDialog(pet: any) {
-    const dialogRef = this.dialog.open(PetDescriptionComponent, { data: pet });
-
-    dialogRef.afterClosed().subscribe(() => {
-      // Subscription runs after the dialog closes
-      console.log('Dialog closed!');
+    const dialogRef = this.dialog.open(PetDescriptionComponent, {
+      data: pet,
+      backdropClickClose: true,
     });
   }
 

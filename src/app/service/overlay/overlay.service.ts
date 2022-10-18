@@ -3,10 +3,7 @@ import { Overlay, ComponentType } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { DialogRef } from './overlay-dialog-ref';
 import { DIALOG_DATA } from './overlay-token';
-
-interface DialogConfig {
-  data?: any;
-}
+import { DialogConfig } from '../../model';
 
 @Injectable()
 export class OverlayService {
@@ -47,8 +44,9 @@ export class OverlayService {
     const portal = new ComponentPortal(component, null, injector);
     overlayRef.attach(portal);
 
-    component?.name === 'PetDescriptionComponent' &&
+    if (config?.backdropClickClose) {
       overlayRef.backdropClick().subscribe(() => dialogRef.close());
+    }
 
     return dialogRef;
   }
