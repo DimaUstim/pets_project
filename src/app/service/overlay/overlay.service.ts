@@ -44,12 +44,10 @@ export class OverlayService {
     const portal = new ComponentPortal(component, null, injector);
     overlayRef.attach(portal);
 
-
     if (config?.backdropClickClose) {
       overlayRef.backdropClick().subscribe(() => dialogRef.close(
       ));
     }
-
     return dialogRef;
   }
 }

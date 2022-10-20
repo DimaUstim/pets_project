@@ -14,13 +14,10 @@ export class SingInService {
   login(data?: User) {
 
     return this.currentUserSbj.next(data as User);
-
   }
 
   public get isUserLoggedIn(): boolean {
     return this.currentUserSbj.getValue() ? true : false;
   }
-
-
 }
 
