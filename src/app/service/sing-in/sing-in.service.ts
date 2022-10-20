@@ -20,7 +20,5 @@ export class SingInService {
   public get isUserLoggedIn(): boolean {
     return this.currentUserSbj.getValue() ? true : false;
   }
-
-
 }
 
