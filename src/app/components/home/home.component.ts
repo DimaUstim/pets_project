@@ -41,6 +41,8 @@ export class HomeComponent implements OnInit {
       data: pet,
       backdropClickClose: true,
     });
+
+
   }
 
   getPets(status: PetStatus) {
