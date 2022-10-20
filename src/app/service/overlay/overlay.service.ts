@@ -46,8 +46,8 @@ export class OverlayService {
 
     if (config?.backdropClickClose) {
       overlayRef.backdropClick().subscribe(() => dialogRef.close());
-      
     }
+    
     return dialogRef;
   }
 }
