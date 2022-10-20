@@ -39,7 +39,7 @@ import { AuthGuardService } from './service';
     SingInComponent,
     PetFormComponent,
     MydashboardComponent,
-    PetDescriptionComponent
+    PetDescriptionComponent,
   ],
   imports: [
     BrowserModule,
