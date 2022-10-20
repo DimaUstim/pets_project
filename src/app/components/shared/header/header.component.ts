@@ -11,7 +11,7 @@ import { SingInComponent } from '../../sing-in/sing-in.component';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] = [];
 
-  constructor(private dialog: OverlayService) {}
+  constructor(private dialog: OverlayService) { }
 
   ngOnInit(): void {
     this.items = [
