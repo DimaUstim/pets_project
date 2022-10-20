@@ -7,7 +7,7 @@ import { DialogConfig } from '../../model';
 
 @Injectable()
 export class OverlayService {
-  constructor(private overlay: Overlay, private injector: Injector) {}
+  constructor(private overlay: Overlay, private injector: Injector) { }
 
   /**
    * Open a custom component in an overlay
@@ -25,7 +25,7 @@ export class OverlayService {
       positionStrategy,
       hasBackdrop: true,
       backdropClass: 'dark-backdrop',
-      panelClass: 'overlay-panel',
+      panelClass: 'overlay-panel'
     });
 
     // Create dialogRef to return
@@ -44,8 +44,10 @@ export class OverlayService {
     const portal = new ComponentPortal(component, null, injector);
     overlayRef.attach(portal);
 
+
     if (config?.backdropClickClose) {
-      overlayRef.backdropClick().subscribe(() => dialogRef.close());
+      overlayRef.backdropClick().subscribe(() => dialogRef.close(
+      ));
     }
 
     return dialogRef;

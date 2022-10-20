@@ -26,6 +26,8 @@ import { PetDescriptionComponent } from './components/pet-description/pet-descri
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { OverlayService } from './service';
+import { SingInService } from './service';
+import { AuthGuardService } from './service';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { OverlayService } from './service';
     SingInComponent,
     PetFormComponent,
     MydashboardComponent,
-    PetDescriptionComponent,
+    PetDescriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,9 @@ import { OverlayService } from './service';
     PetsService,
     PetsRepository,
     OverlayService,
+    SingInService,
+    AuthGuardService,
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: BaseUrlInterceptor,
@@ -66,4 +71,4 @@ import { OverlayService } from './service';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

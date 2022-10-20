@@ -5,6 +5,7 @@ import { MydashboardComponent } from './components/my-dashboard/mydashboard.comp
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { PetsComponent } from './components/pets/pets.component';
 import { SingInComponent } from './components/sing-in/sing-in.component';
+import { AuthGuardService } from './service/sing-in/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -13,11 +14,11 @@ const routes: Routes = [
   },
   {
     path: 'petFormFound',
-    component: PetFormComponent,
+    component: PetFormComponent, canActivate: [AuthGuardService]
   },
   {
     path: 'petFormLost',
-    component: PetFormComponent,
+    component: PetFormComponent, canActivate: [AuthGuardService]
   },
   {
     path: 'pets',
@@ -25,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'myDashboard',
-    component: MydashboardComponent,
+    component: MydashboardComponent, canActivate: [AuthGuardService]
   },
   {
     path: 'singIn',
@@ -37,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

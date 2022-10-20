@@ -1,9 +1,9 @@
-<form class="sing-in-form">
+<div class="sing-in-form">
   <h3>Sing In Form</h3>
   <div>
     <h5>Email</h5>
     <span class="p-float-label">
-      <input id="float-input" type="text" pInputText />
+      <input id="float-input" type="text" pInputText [(ngModel)]="email" />
     </span>
   </div>
   <div>
@@ -11,7 +11,11 @@
     <p-password [feedback]="false"></p-password>
   </div>
   <div class="mt-3 mb-3">
-    <p-button label="Submit"></p-button>
+    <p-button
+      (click)="onBtnClick()"
+      (click)="close()"
+      label="Submit"
+    ></p-button>
   </div>
   <div class="mt-2 mb-2">
     <button
@@ -23,4 +27,4 @@
       class="p-button-danger"
     ></button>
   </div>
-</form>
+</div>
