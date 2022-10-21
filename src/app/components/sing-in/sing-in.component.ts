@@ -20,7 +20,10 @@ export class SingInComponent {
 
   onBtnClick() {
     this.singInService.login(this.email);
-    this.router.navigate([this.data]);
+
+    if (this.data) {
+      this.router.navigateByUrl(this.data);
+    }
   }
 
   close() {
