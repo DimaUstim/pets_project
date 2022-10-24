@@ -12,7 +12,6 @@ export class SingInService {
   constructor() { }
 
   login(data?: User) {
-
     return this.currentUserSbj.next(data as User);
   }
 

@@ -28,6 +28,7 @@ import { PasswordModule } from 'primeng/password';
 import { OverlayService } from './service';
 import { SingInService } from './service';
 import { AuthGuardService } from './service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AuthGuardService } from './service';
     OverlayModule,
     InputTextModule,
     PasswordModule,
+    ReactiveFormsModule,
   ],
   providers: [
     PetsService,
