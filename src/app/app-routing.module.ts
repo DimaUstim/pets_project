@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'singIn',
     component: SingInComponent,
   },
+  {
+    path: '**',
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
