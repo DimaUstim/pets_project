@@ -26,12 +26,14 @@ export class SingInComponent implements OnInit {
     });
   }
 
-  onBtnClick() {
+  singIn() {
     this.singInService.login({ email: this.loginForm.value.emailInput });
 
     if (this.data) {
       this.router.navigateByUrl(this.data);
     }
+
+    this.close();
   }
 
   close() {
