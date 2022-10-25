@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @Component({
   selector: 'pet-form',
@@ -10,3 +11,4 @@ export class PetFormComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+
