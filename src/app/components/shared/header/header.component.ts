@@ -31,8 +31,7 @@ export class HeaderComponent implements OnInit {
       const dialogRef = this.dialog.open(PopUpComponent, {
         data: {
           title: 'Do you want to log out?',
-          submitBtn: 'Yes',
-          cancelBtn: 'No',
+          submitBtn: 'Submit',
         },
         backdropClickClose: true,
       });
@@ -84,7 +83,6 @@ export class HeaderComponent implements OnInit {
         routerLink: ['/myDashboard'],
       },
     ];
-
     this.items.push(this.singInBtn);
   }
 }

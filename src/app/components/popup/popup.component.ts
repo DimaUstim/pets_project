@@ -9,13 +9,12 @@ import { DialogRef, DIALOG_DATA } from 'src/app/service';
 export class PopUpComponent {
   title: string;
   submitBtn: string;
-  cancelBtn: string;
+  cancelBtn: string = 'Cancel';
 
   constructor(private dialogRef: DialogRef,
     @Inject(DIALOG_DATA) public data: any) {
     this.title = data.title;
     this.submitBtn = data.submitBtn;
-    this.cancelBtn = data.cancelBtn;
   }
 
   close() {
