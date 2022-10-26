@@ -8,7 +8,7 @@ import { Subject, Observable } from 'rxjs';
 export class DialogRef {
   private afterClosedSubject = new Subject<any>();
 
-  constructor(private overlayRef: OverlayRef) { }
+  constructor(private overlayRef: OverlayRef) {}
 
   /**
    * Closes the overlay. You can optionally provide a result.
