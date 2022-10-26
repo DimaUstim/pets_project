@@ -31,25 +31,24 @@ export class HeaderComponent implements OnInit {
       const dialogRef = this.dialog.open(PopUpComponent, {
         data: {
           title: 'Do you want to log out?',
-          btnLabel1: 'Yes',
-          btnLabel2: 'No',
+          submitBtn: 'Yes',
+          cancelBtn: 'No',
         },
         backdropClickClose: true,
       });
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
-          this.singInService.login();
+          this.singInService.logout();
           this.route.navigateByUrl('/');
         }
       });
-
     },
   }
 
   constructor(private dialog: OverlayService, private singInService: SingInService, private route: Router) { }
 
   ngOnInit(): void {
-    this.singInService.isUserLoggedIn$.subscribe((data) => {
+    this.singInService.userLoggedInData.subscribe((data) => {
       this.isLoggedIn = data ? true : false;
       this.items = Array.from(this.items);
       if (this.isLoggedIn) {
@@ -84,14 +83,8 @@ export class HeaderComponent implements OnInit {
         label: 'My Dashboard',
         routerLink: ['/myDashboard'],
       },
-      {
-        label: 'Sing in',
-        icon: 'pi pi-fw pi-sign-in',
-        command: () => {
-          this.dialog.open(SingInComponent);
-        },
-      },
     ];
+    this.items.push(this.singInBtn);
   }
 }
 

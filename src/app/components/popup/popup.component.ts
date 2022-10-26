@@ -8,14 +8,14 @@ import { DialogRef, DIALOG_DATA } from 'src/app/service';
 })
 export class PopUpComponent {
   title: string;
-  btnLabel1: string;
-  btnLabel2: string;
+  submitBtn: string;
+  cancelBtn: string;
 
   constructor(private dialogRef: DialogRef,
     @Inject(DIALOG_DATA) public data: any) {
     this.title = data.title;
-    this.btnLabel1 = data.btnLabel1;
-    this.btnLabel2 = data.btnLabel2;
+    this.submitBtn = data.submitBtn;
+    this.cancelBtn = data.cancelBtn;
   }
 
   close() {

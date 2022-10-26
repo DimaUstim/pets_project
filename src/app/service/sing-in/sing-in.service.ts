@@ -11,16 +11,19 @@ export class SingInService {
 
   constructor() { }
 
-  login(data?: User) {
-
+  login(data: User) {
     return this.currentUserSbj.next(data as User);
+  }
+
+  logout() {
+    return this.currentUserSbj.next(null);
   }
 
   public get isUserLoggedIn(): boolean {
     return this.currentUserSbj.getValue() ? true : false;
   }
 
-  public get isUserLoggedIn$() {
+  public get userLoggedInData() {
     return this.currentUserSbj.asObservable();
   }
 }
