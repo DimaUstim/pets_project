@@ -3,7 +3,7 @@ import { MenuItem } from 'primeng/api';
 import { OverlayService } from '../../../service';
 import { SingInComponent } from '../../sing-in/sing-in.component';
 import { SingInService } from '../../../service';
-import { PopPapComponent } from '../../pop-pap/pop-pap.component';
+import { PopUpComponent } from '../../popup/popup.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
     label: 'Log out',
     icon: 'pi pi-fw pi-sign-out',
     command: () => {
-      const dialogRef = this.dialog.open(PopPapComponent, {
+      const dialogRef = this.dialog.open(PopUpComponent, {
         data: {
           title: 'Do you want to log out?',
           btnLabel1: 'Yes',

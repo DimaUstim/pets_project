@@ -2,11 +2,11 @@ import { Component, Inject } from '@angular/core';
 import { DialogRef, DIALOG_DATA } from 'src/app/service';
 
 @Component({
-  selector: 'pop-pap',
-  templateUrl: './pop-pap.component.html',
-  styleUrls: ['./pop-pap.component.scss']
+  selector: 'popup',
+  templateUrl: './popup.component.html',
+  styleUrls: ['./popup.component.scss']
 })
-export class PopPapComponent {
+export class PopUpComponent {
   title: string;
   btnLabel1: string;
   btnLabel2: string;

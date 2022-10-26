@@ -29,7 +29,7 @@ import { OverlayService } from './service';
 import { SingInService } from './service';
 import { AuthGuardService } from './service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PopPapComponent } from './components/pop-pap/pop-pap.component';
+import { PopUpComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { PopPapComponent } from './components/pop-pap/pop-pap.component';
     PetFormComponent,
     MydashboardComponent,
     PetDescriptionComponent,
-    PopPapComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
