@@ -1,14 +1,14 @@
 import { OverlayRef } from '@angular/cdk/overlay';
-import { Subject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 /**
  * A reference to the dialog itself.
  * Can be injected into the component added to the overlay and then used to close itself.
  */
 export class DialogRef {
-  private afterClosedSubject = new Subject<any>();
+  private afterClosedSubject = new BehaviorSubject<any>(null);
 
-  constructor(private overlayRef: OverlayRef) {}
+  constructor(private overlayRef: OverlayRef) { }
 
   /**
    * Closes the overlay. You can optionally provide a result.
