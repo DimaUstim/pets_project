@@ -7,7 +7,7 @@ import { User } from '../../model';
 })
 export class SingInService {
 
-  private currentUserSbj = new BehaviorSubject<User | null>(null);
+  public currentUserSbj = new BehaviorSubject<User | null>(null);
 
   constructor() { }
 
@@ -19,5 +19,8 @@ export class SingInService {
   public get isUserLoggedIn(): boolean {
     return this.currentUserSbj.getValue() ? true : false;
   }
-}
 
+  public get isUserLoggedIn$() {
+    return this.currentUserSbj.asObservable();
+  }
+}
