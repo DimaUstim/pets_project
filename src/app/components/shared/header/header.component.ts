@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { OverlayService } from '../../../service';
-import { SingInComponent } from '../../sing-in/sing-in.component';
-import { SingInService } from '../../../service';
+import { SignInComponent } from '../../sign-in/sign-in.component';
+import { SignInService } from '../../../service';
 import { PopUpComponent } from '../../popup/popup.component';
 import { Router } from '@angular/router';
 
@@ -16,47 +16,44 @@ export class HeaderComponent implements OnInit {
   items: MenuItem[] = [];
   isLoggedIn: boolean = false;
 
-  singInBtn: MenuItem = {
-    label: 'Sing in',
+  signInMenuItem: MenuItem = {
+    label: 'Sign in',
     icon: 'pi pi-fw pi-sign-in',
     command: () => {
-      this.dialog.open(SingInComponent);
+      this.dialog.open(SignInComponent);
     },
   }
 
-  logOutBtn: MenuItem = {
+  logOutMenuItem: MenuItem = {
     label: 'Log out',
     icon: 'pi pi-fw pi-sign-out',
     command: () => {
       const dialogRef = this.dialog.open(PopUpComponent, {
-        data: {
-          title: 'Do you want to log out?',
-          submitBtn: 'Submit',
-        },
+        data: {},
         backdropClickClose: true,
       });
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
-          this.singInService.logout();
+          this.signInService.logout();
           this.route.navigateByUrl('/');
         }
       });
     },
   }
 
-  constructor(private dialog: OverlayService, private singInService: SingInService, private route: Router) { }
+  constructor(private dialog: OverlayService, private signInService: SignInService, private route: Router) { }
 
   ngOnInit(): void {
-    this.singInService.userLoggedInData.subscribe((data) => {
+    this.signInService.userLoggedInData.subscribe((data) => {
       this.isLoggedIn = data ? true : false;
       this.items = Array.from(this.items);
       if (this.isLoggedIn) {
         this.items.pop();
-        this.items.push(this.logOutBtn);
+        this.items.push(this.logOutMenuItem);
       }
       if (!this.isLoggedIn) {
         this.items.pop();
-        this.items.push(this.singInBtn);
+        this.items.push(this.signInMenuItem);
       }
     });
 
@@ -82,8 +79,8 @@ export class HeaderComponent implements OnInit {
         label: 'My Dashboard',
         routerLink: ['/myDashboard'],
       },
+      this.signInMenuItem,
     ];
-    this.items.push(this.singInBtn);
   }
 }
 

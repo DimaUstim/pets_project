@@ -5,9 +5,9 @@ import { User } from '../../model';
 @Injectable({
   providedIn: 'root'
 })
-export class SingInService {
+export class SignInService {
 
-  public currentUserSbj = new BehaviorSubject<User | null>(null);
+  private currentUserSbj = new BehaviorSubject<User | null>(null);
 
   constructor() { }
 

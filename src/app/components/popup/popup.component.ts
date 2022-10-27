@@ -7,14 +7,15 @@ import { DialogRef, DIALOG_DATA } from 'src/app/service';
   styleUrls: ['./popup.component.scss']
 })
 export class PopUpComponent {
-  title: string;
-  submitBtn: string;
-  cancelBtn: string = 'Cancel';
+  title: string = 'Do you want to log out?';
+  submitText: string = 'Submit';
+  cancelText: string = 'Cancel';
 
   constructor(private dialogRef: DialogRef,
     @Inject(DIALOG_DATA) public data: any) {
-    this.title = data.title;
-    this.submitBtn = data.submitBtn;
+    this.title = data.title || this.title;
+    this.submitText = data.submitText || this.submitText;
+    this.cancelText = data.cancelText || this.cancelText;
   }
 
   close() {
