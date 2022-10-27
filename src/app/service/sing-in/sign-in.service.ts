@@ -12,7 +12,7 @@ export class SignInService {
   constructor() { }
 
   login(user: User) {
-    return this.currentUserSbj.next(user as User);
+    return this.currentUserSbj.next(user);
   }
 
   logout() {
