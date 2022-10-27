@@ -11,8 +11,8 @@ export class SignInService {
 
   constructor() { }
 
-  login(data: User) {
-    return this.currentUserSbj.next(data as User);
+  login(user: User) {
+    return this.currentUserSbj.next(user as User);
   }
 
   logout() {
@@ -23,7 +23,7 @@ export class SignInService {
     return this.currentUserSbj.getValue() ? true : false;
   }
 
-  public get userLoggedInData() {
+  public get userChanged() {
     return this.currentUserSbj.asObservable();
   }
 }
