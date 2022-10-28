@@ -5,19 +5,25 @@ import { User } from '../../model';
 @Injectable({
   providedIn: 'root'
 })
-export class SingInService {
+export class SignInService {
 
   private currentUserSbj = new BehaviorSubject<User | null>(null);
 
   constructor() { }
 
-  login(data?: User) {
+  login(user: User) {
+    return this.currentUserSbj.next(user);
+  }
 
-    return this.currentUserSbj.next(data as User);
+  logout() {
+    return this.currentUserSbj.next(null);
   }
 
   public get isUserLoggedIn(): boolean {
     return this.currentUserSbj.getValue() ? true : false;
   }
-}
 
+  public get userChanged() {
+    return this.currentUserSbj.asObservable();
+  }
+}

@@ -1,2 +1,2 @@
-export { SingInService } from './sing-in.service';
+export { SignInService } from './sign-in.service';
 export { AuthGuardService } from './auth-guard.service';

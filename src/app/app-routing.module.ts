@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MydashboardComponent } from './components/my-dashboard/mydashboard.component';
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { PetsComponent } from './components/pets/pets.component';
-import { SingInComponent } from './components/sing-in/sing-in.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 import { AuthGuardService } from './service/sing-in/auth-guard.service';
 
 const routes: Routes = [
@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'singIn',
-    component: SingInComponent,
+    component: SignInComponent,
   },
   {
     path: '**',
