@@ -1,9 +1,77 @@
-<!--<h5>Basic</h5>
-<div class="p-field-radiobutton">
-	<p-radioButton name="pets" value="Found" [(ngModel)]="pets" inputId="city1"></p-radioButton>
-	<label for="city1">Found</label>
+<div class="my-7 p-fluid grid">
+
+	<form class="solvve-form flex flex-wrap align-items-center justify-content-center">
+	
+
+		<div class="field col-12 mb-2">
+		<div class="text-600 text-xl text-center">On this page you can post information about the found pets</div>
+		</div>
+<!--		<div class="field col-12 mb-2">
+		<div class="text-600 text-xl text-center">On this page you can post information about the lost pets</div>
+		</div>
+-->
+		<div class="field col-10 mb-3 flex-wrap align-items-center justify-content-center">
+			<div class="field-radiobutton flex">
+				<p-selectButton [options]="stateOptions" [(ngModel)]="PetStatus" optionLabel="label" optionValue="value">
+				</p-selectButton>
+			</div>
+		</div>
+		
+		<div class="field col-10 mb-3">
+			<input class="p-inputtext p-component" type="text" placeholder="Name (Optional)">
+		</div>
+
+		<div class="field col-10 mb-3">
+			<span class="p-float-label">
+				<p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="PetType" [(ngModel)]="PetType"
+					optionLabel="name"></p-dropdown>
+				<label for="dropdown">Type (Optional)</label>
+			</span>
+		</div>
+
+		<div class="field col-10 mb-3">
+			<span class="p-float-label">
+				<p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="PetGender" [(ngModel)]="PetGender"
+					optionLabel="name"></p-dropdown>
+				<label for="dropdown">Gender (Optional)</label>
+			</span>
+		</div>
+
+		<div class="field col-10">
+			<span class="p-float-label">
+				<p-calendar 
+				inputId="calendar" 
+				[(ngModel)]="Calendar"></p-calendar>
+				<label for="calendar">Found Date</label>
+			</span>
+		</div>
+
+		<div class="field col-10"><textarea 
+			class="p-inputtextarea p-inputtext p-component p-inputtextarea-resizable"
+			rows="5"
+			placeholder="Add any character traits (shy, friendly, etc.) or important information that would help someone find a pet."
+			style="height: calc(126px); overflow: hidden;"></textarea>
+		</div>
+
+		<div class="field col-10 mb-2">
+			<div class="text-600 text-md">Please select your photos:</div>
+			</div>
+	
+		<div class="photo-uploader field col-10">
+			<p-fileUpload class="photo-uploader__wrapper">
+				<input class="photo-uploader__input" type="file" multiple="" accept="image/*, .png, .jpg, .gif, .web" title=""> Please select your photos
+				<img class="photo-uploader__icon" src="/src/assets/img/upload.svg" alt="Upload photo"
+					style="display: none;">
+			</p-fileUpload>
+		</div>
+	
+
+		<div class="field col-3 mb-12 flex flex-wrap align-items-center">
+			<button class="p-button p-component solvve-form-btn w-full max-w-12rem" type="submit" aria-label="Create">
+				<span class="p-button-label">Create</span>
+				<span class="p-ink" role="presentation"></span>
+			</button>
+		</div>
+
+	</form>
 </div>
-<div class="p-field-radiobutton">
-	<p-radioButton name="pets" value="Lost" [(ngModel)]="pets" inputId="city2"></p-radioButton>
-	<label for="city2">Lost</label>
-</div>-->

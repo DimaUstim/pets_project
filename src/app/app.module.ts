@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { CommonModule } from '@angular/common';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +32,24 @@ import { SingInService } from './service';
 import { AuthGuardService } from './service';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { PanelModule } from 'primeng/panel';
+import { TabViewModule } from 'primeng/tabview';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CalendarModule } from 'primeng/calendar';
+import { ChipsModule } from 'primeng/chips';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {FileUploadModule} from 'primeng/fileupload';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +77,26 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputTextModule,
     PasswordModule,
     ReactiveFormsModule,
+    CommonModule,
+    ButtonModule,
+    PanelModule,
+    TabViewModule,
+    InputTextModule,
+    AutoCompleteModule,
+    CalendarModule,
+    CascadeSelectModule,
+    ChipsModule,
+    InputMaskModule,
+    InputNumberModule,
+    DropdownModule,
+    MultiSelectModule,
+    InputTextareaModule,
+    FormsModule,
+    PasswordModule,
+    RadioButtonModule,
+    InputSwitchModule,
+    SelectButtonModule,
+    FileUploadModule
   ],
   providers: [
     PetsService,

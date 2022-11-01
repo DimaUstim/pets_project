@@ -1,6 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { TabViewModule } from 'primeng/tabview';
 
 import { PetFormComponent } from './pet-form.component';
+
+ @NgModule({
+  imports: [RouterModule.forChild([{ path: '', component: PetFormComponent }])],
+  exports: [RouterModule]
+})
+export class PetFormComponentRoutingModule {}
+
 
 describe('PetFormComponent', () => {
   let component: PetFormComponent;
