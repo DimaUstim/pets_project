@@ -10,7 +10,7 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PetsComponent } from './components/pets/pets.component';
-import { SingInComponent } from './components/sing-in/sing-in.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MenubarModule } from 'primeng/menubar';
 import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { MydashboardComponent } from './components/my-dashboard/mydashboard.component';
@@ -28,9 +28,10 @@ import { PetDescriptionComponent } from './components/pet-description/pet-descri
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { OverlayService } from './service';
-import { SingInService } from './service';
+import { SignInService } from './service';
 import { AuthGuardService } from './service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PopUpComponent } from './components/popup/popup.component';
 
 import { PanelModule } from 'primeng/panel';
 import { TabViewModule } from 'primeng/tabview';
@@ -57,10 +58,11 @@ import {FileUploadModule} from 'primeng/fileupload';
     FooterComponent,
     HomeComponent,
     PetsComponent,
-    SingInComponent,
+    SignInComponent,
     PetFormComponent,
     MydashboardComponent,
     PetDescriptionComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,7 @@ import {FileUploadModule} from 'primeng/fileupload';
     PetsService,
     PetsRepository,
     OverlayService,
-    SingInService,
+    SignInService,
     AuthGuardService,
 
     {
