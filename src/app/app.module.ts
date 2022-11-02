@@ -30,6 +30,13 @@ import { SignInService } from './service';
 import { AuthGuardService } from './service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PopUpComponent } from './components/popup/popup.component';
+import { TableModule } from 'primeng/table';
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -59,6 +66,13 @@ import { PopUpComponent } from './components/popup/popup.component';
     InputTextModule,
     PasswordModule,
     ReactiveFormsModule,
+    TableModule,
+    ContextMenuModule,
+    MultiSelectModule,
+    SliderModule,
+    CalendarModule,
+    DropdownModule,
+    ProgressBarModule
   ],
   providers: [
     PetsService,

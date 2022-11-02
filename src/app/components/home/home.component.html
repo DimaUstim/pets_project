@@ -50,13 +50,12 @@
               [src]="pet.image"
             />
           </div>
-          <div class="info-class flex flex-column">
-            <span class="flex mt-3 ml-4">{{ pet.status }}</span>
-            <span class="flex mt-2 mb-3 ml-4">{{ pet.periodInfo }}</span>
+          <div class="info-class flex align-items-center h-3rem">
+            <span class="p-2">{{ pet.status }}</span>
+            <span>{{ pet.periodInfo | date: "MM/dd/yyyy" }}</span>
           </div>
         </div>
       </div>
     </ng-template>
   </p-carousel>
 </div>
-

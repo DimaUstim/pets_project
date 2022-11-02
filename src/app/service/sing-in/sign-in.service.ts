@@ -11,8 +11,8 @@ export class SignInService {
 
   constructor() { }
 
-  login(data: User) {
-    return this.currentUserSbj.next(data as User);
+  login(user: User) {
+    return this.currentUserSbj.next(user);
   }
 
   logout() {

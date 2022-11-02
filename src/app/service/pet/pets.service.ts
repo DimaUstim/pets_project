@@ -4,14 +4,19 @@ import { Pet, PetStatus } from '../../model';
 
 @Injectable()
 export class PetsService {
-  constructor(private petsRepository: PetsRepository) {}
+  constructor(private petsRepository: PetsRepository) { }
 
   async getPets(status?: PetStatus): Promise<Pet[]> {
     const data = await this.petsRepository.getPets();
+
     if (status) {
       return data.filter((pet) => pet.status === status);
     } else {
       return data;
     }
+  }
+
+  async deletePet(id: any) {
+    await this.petsRepository.deletePet(id);
   }
 }

@@ -29,13 +29,15 @@ export class HeaderComponent implements OnInit {
     icon: 'pi pi-fw pi-sign-out',
     command: () => {
       const dialogRef = this.dialog.open(PopUpComponent, {
-        data: {},
+        data: {
+          title: 'Do you want log out?',
+        },
         backdropClickClose: true,
       });
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
           this.signInService.logout();
-          this.route.navigateByUrl('/');
+          this.route.navigate(['']);
         }
       });
     },

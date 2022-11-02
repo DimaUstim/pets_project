@@ -1,1 +1,145 @@
-<p>mydashboard works!</p>
+<p-toast></p-toast>
+
+<p-contextMenu #cm [model]="items"></p-contextMenu>
+
+<p-table
+  #dt1
+  [value]="pets"
+  dataKey="id"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [loading]="loading"
+  [rowHover]="true"
+  responsiveLayout="stack"
+  styleClass="p-datatable-customers"
+  [paginator]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  breakpoint="767px"
+  [globalFilterFields]="['name', 'status', 'id']"
+>
+  <ng-template pTemplate="caption">
+    <div class="flex">
+      <button
+        pButton
+        label="Add Pet"
+        class="p-button-outlined"
+        icon="pi pi-plus"
+        (click)="addPet()"
+      ></button>
+      <span class="p-input-icon-left ml-auto">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          (input)="globalFilter($event, dt1)"
+          placeholder="Search keyword"
+        />
+      </span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th></th>
+      <th>
+        <div class="p-d-flex p-jc-between p-ai-center">
+          <p-columnFilter type="text" field="name"></p-columnFilter>
+        </div>
+      </th>
+      <th>
+        <div class="p-d-flex p-jc-between p-ai-center">
+          <p-columnFilter matchMode="equals" [showMenu]="false" field="status">
+            <ng-template pTemplate="filter" let-filter="filterCallback">
+              <p-dropdown
+                [options]="PetStatus"
+                (onChange)="filter($event.value)"
+                placeholder="Any"
+              >
+                <ng-template let-option pTemplate="item">
+                  <span>{{ option }}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template></p-columnFilter
+          >
+        </div>
+      </th>
+      <th>
+        <div class="data-picker p-d-flex p-jc-between p-ai-center">
+          <p-columnFilter type="date" field="periodInfo"></p-columnFilter>
+        </div>
+      </th>
+      <th>
+        <div class="p-d-flex p-jc-between p-ai-center">
+          <p-columnFilter matchMode="equals" [showMenu]="false" field="gender">
+            <ng-template pTemplate="filter" let-filter="filterCallback">
+              <p-dropdown
+                [options]="PetGender"
+                (onChange)="filter($event.value)"
+                placeholder="Any"
+              >
+                <ng-template let-option pTemplate="item">
+                  <span>{{ option }}</span>
+                </ng-template>
+              </p-dropdown>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
+      <th>
+        <div class="p-d-flex p-jc-between p-ai-center">
+          <p-columnFilter type="text" field="id"></p-columnFilter>
+        </div>
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><div>Name</div></th>
+      <th><div>Status</div></th>
+      <th><div>Date</div></th>
+      <th><div>Gender</div></th>
+      <th><div>ID</div></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-pet let-columns="columns">
+    <tr>
+      <td>
+        <div class="image">
+          <img [src]="pet.image" alt="pet" style="text-align: center" />
+        </div>
+      </td>
+      <td>
+        <span class="p-column-title">Name:</span>
+        {{ pet.name }}
+      </td>
+      <td>
+        <span class="p-column-title">Status:</span>
+        {{ pet.status }}
+      </td>
+      <td>
+        <span class="p-column-title">Date:</span>
+        {{ pet.periodInfo | date: "MM/dd/yyyy" }}
+      </td>
+      <td>
+        <span class="p-column-title">Gender:</span>
+        {{ pet.gender }}
+      </td>
+      <td>
+        <span class="p-column-title">Id:</span>
+        {{ pet.id }}
+      </td>
+      <td>
+        <button
+          (click)="openContextMenu($event, cm, pet)"
+          pButton
+          type="button"
+          class="p-button-secondary"
+          icon="pi pi-cog"
+        ></button>
+      </td>
+      <td></td></tr
+  ></ng-template>
+</p-table>
