@@ -46,7 +46,7 @@ export class MydashboardComponent implements OnInit {
 
     this.items = [
       {
-        label: 'Edit', icon: 'pi pi-fw pi-search', command: () => {
+        label: 'Edit', icon: 'pi pi-fw pi-pencil', command: () => {
           this.route.navigate(['/petFormLost']);
         }
       },
