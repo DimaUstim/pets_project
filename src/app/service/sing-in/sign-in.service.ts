@@ -23,7 +23,7 @@ export class SignInService {
     return this.currentUserSbj.getValue() ? true : false;
   }
 
-  public get userLoggedInData() {
+  public get userChanged() {
     return this.currentUserSbj.asObservable();
   }
 }

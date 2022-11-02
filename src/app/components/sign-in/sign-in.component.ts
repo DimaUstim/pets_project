@@ -6,11 +6,12 @@ import { SignInService } from '../../service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'sing-in',
+  selector: 'sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+
   title = 'Sign In';
   public loginForm!: FormGroup
 
@@ -26,7 +27,7 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  singIn() {
+  signIn() {
     this.signInService.login({ email: this.loginForm.value.emailInput });
 
     if (this.data) {
