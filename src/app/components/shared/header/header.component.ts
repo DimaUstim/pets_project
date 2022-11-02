@@ -15,11 +15,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   items: MenuItem[] = [];
   isLoggedIn: boolean = false;
-  signInMenuItem!: MenuItem;
-  logOutMenuItem!: MenuItem;
-
-  constructor(private dialog: OverlayService, private signInService: SignInService, private route: Router) {
-    this.initMenuItems();
+  signInMenuItem: MenuItem = {
+    label: 'Sign In', icon: 'pi pi-fw pi-sign-in', command: () => {
+      this.dialog.open(SignInComponent);
+    }
   }
 
   logOutMenuItem: MenuItem = {
@@ -41,24 +40,21 @@ export class HeaderComponent implements OnInit {
     },
   }
 
-    this.logOutMenuItem = {
-      label: 'Log out',
-      icon: 'pi pi-fw pi-sign-out',
-      command: () => {
-        const dialogRef = this.dialog.open(PopUpComponent, {
-          data: {
-            title: 'Do you want to log out?',
-          },
-          backdropClickClose: true,
-        });
-        dialogRef.afterClosed().subscribe((result) => {
-          if (result) {
-            this.signInService.logout();
-            this.route.navigateByUrl('/');
-          }
-        });
-      },
-    }
+  constructor(private dialog: OverlayService, private signInService: SignInService, private route: Router) { }
+
+  ngOnInit(): void {
+    this.signInService.userChanged.subscribe((user) => {
+      this.isLoggedIn = user ? true : false;
+      this.items = Array.from(this.items);
+      if (this.isLoggedIn) {
+        this.items.pop();
+        this.items.push(this.logOutMenuItem);
+      }
+      if (!this.isLoggedIn) {
+        this.items.pop();
+        this.items.push(this.signInMenuItem);
+      }
+    });
 
     this.items = [
       {
@@ -85,20 +81,6 @@ export class HeaderComponent implements OnInit {
       this.signInMenuItem,
     ];
   }
-
-  ngOnInit(): void {
-    this.signInService.userChanged.subscribe((user) => {
-      this.isLoggedIn = user ? true : false;
-      this.items = Array.from(this.items);
-      if (this.isLoggedIn) {
-        this.items.pop();
-        this.items.push(this.logOutMenuItem);
-      }
-      if (!this.isLoggedIn) {
-        this.items.pop();
-        this.items.push(this.signInMenuItem);
-      }
-    });
-  }
 }
+
 
