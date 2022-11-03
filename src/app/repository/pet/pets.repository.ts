@@ -4,10 +4,18 @@ import { Pet } from '../../model';
 
 @Injectable()
 export class PetsRepository {
-  constructor(private httpClient: HttpClient) {}
-
+  constructor(private httpClient: HttpClient) { }
   async getPets() {
-    const res = await this.httpClient.get<Pet[]>('list').toPromise();
-    return res || [];
+    const res = await this.httpClient.get<any[]>('list').toPromise();
+
+    let pets = res?.map((pet) => {
+      pet.periodInfo = new Date(pet.periodInfo);
+      return pet as Pet;
+    });
+    return pets || [];
+  }
+
+  async deletePet(id: any) {
+    await this.httpClient.delete(id).toPromise();
   }
 }

@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
         dialogRef.afterClosed().subscribe((result) => {
           if (result) {
             this.signInService.logout();
-            this.route.navigateByUrl('/');
+            this.route.navigate(['']);
           }
         });
       },
@@ -91,4 +91,3 @@ export class HeaderComponent implements OnInit {
     });
   }
 }
-

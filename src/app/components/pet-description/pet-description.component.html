@@ -18,7 +18,10 @@
       Gender : <span class="gender">{{ currentPet?.gender }}</span>
     </div>
     <div class="type-info">
-      Period : <span class="gender">{{ currentPet?.periodInfo }}</span>
+      Date :
+      <span class="gender">{{
+        currentPet?.periodInfo | date: "MM/dd/yyyy"
+      }}</span>
     </div>
     <div class="type-info">
       ID : <span class="id">{{ currentPet?.id }}</span>
