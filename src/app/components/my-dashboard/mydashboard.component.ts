@@ -34,7 +34,6 @@ export class MydashboardComponent implements OnInit {
     event.stopPropagation();
     cm.show(event);
     this.selectedPet = pet;
-    // return false;
   }
 
   ngOnInit(): void {
