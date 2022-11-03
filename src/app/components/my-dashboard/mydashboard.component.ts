@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
 export class MydashboardComponent implements OnInit {
   pets: Pet[] = [];
   loading: boolean = true;
-  activityValues: number[] = [0, 100];
   PetStatus = Object.values(PetStatus);
   PetGender = Object.values(PetGender);
   items: MenuItem[] = [];
@@ -35,7 +34,7 @@ export class MydashboardComponent implements OnInit {
     event.stopPropagation();
     cm.show(event);
     this.selectedPet = pet;
-    return false;
+    // return false;
   }
 
   ngOnInit(): void {
@@ -73,13 +72,6 @@ export class MydashboardComponent implements OnInit {
     this.pets = this.pets.filter((p) => p.id !== selectedPet.id);
     await this.petsService.deletePet(selectedPet.id);
     this.messageService.add({ severity: 'info', summary: 'Pet Deleted', detail: selectedPet.name });
-    this.showList();
-  }
-  showList() {
-    this.petsService.getPets().then((pets) => {
-      this.pets = pets;
-      this.loading = false;
-    });
   }
 }
 
